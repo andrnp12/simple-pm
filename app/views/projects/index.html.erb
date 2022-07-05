@@ -1,0 +1,50 @@
+  <div>  
+    <nav class="navbar sticky-navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+      <a class="navbar-brand" href="#"><h4>ProjeKU</h4></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">  
+        <div class="nav navbar-nav ml-auto">
+          <% if user_signed_in? %>   
+          <a class="nav-item nav-link active" href="<%= projects_path %>" >Home</a>
+          <a class="nav-item nav-link" href="<%= edit_user_registration_path %>" >Edit User</a>
+          <a class="nav-item nav-link"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-secondary mb-auto mt-auto' %></a>
+          <% else %>
+          <a class="nav-item nav-link" href="<%= new_user_session_path %>" >Sign In</a>
+          <% end %>
+        </div>         
+      </div>
+    </nav>
+  </div>
+
+<div class="card">
+  <div class="card-body">
+    <h3 class='card-tittle d-flex justify-content-between mb-3'>
+      <span> List Projects </span>
+      <%= link_to 'New Project', new_project_path, class: 'btn btn-primary' %>
+    </h3>
+
+    <% @projects.each do |project| %>
+      <%= link_to project, class: 'text-decoration-none' do %>
+        <div class="card project-card mb-3">
+          <div class="card-body">
+            <div class="mb-3">
+              <span class="badge badge-<%= project.badge_color %>">
+              <%= project.status %>
+              </span>
+              <span class="text-secondary"><small>
+              <%= project.percent_complete %>% Complete
+              (<%= project.total_complete %>/<%= project.total_tasks %> tasks)
+              </small></span>
+            </div>
+            <h5 class='card-tittle text-dark'><b><%= project.name %></b></h5>
+            <p class='text-secondary'><%= project.description %></p>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+

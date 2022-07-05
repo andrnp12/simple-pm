@@ -1,0 +1,35 @@
+  <div class="card w-50 mx-auto">
+  <div class="card-body w-75 mx-auto">
+    <h2 class='card-tittle mb-4'>
+      <span><center>Sign In</center></span>
+    </h2>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-group">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="form-group">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Log in Account", class: 'btn btn-primary w-100' %>
+        </div>
+      <% end %>
+
+      <hr>
+
+      <center><%= render "devise/shared/links" %></center>
+
+      </div>
+    </div>
