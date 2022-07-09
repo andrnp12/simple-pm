@@ -11,9 +11,17 @@
 
   <body class='bg-light'>
     <div class="container pt-5">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+      <div class="alert alert-info"><%= notice %>
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      </div>
+      <% elsif alert %>
+      <div class="alert alert-danger"><%= alert %>
+      <a href="#" class="close" data-dismiss="alert">&times;</a>
+      </div>
+      <% end %>
         <%= yield %>
     </div>
   </body>
+
 </html>

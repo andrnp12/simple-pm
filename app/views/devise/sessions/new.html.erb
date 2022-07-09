@@ -1,7 +1,7 @@
   <div class="card w-50 mx-auto">
   <div class="card-body w-75 mx-auto">
     <h2 class='card-tittle mb-4'>
-      <span><center>Sign In</center></span>
+      <span><center>Masukan Akun Anda</center></span>
     </h2>
 
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -18,12 +18,12 @@
         <% if devise_mapping.rememberable? %>
           <div class="form-group">
             <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
+            <%= f.label :Ingat_Saya? %>
           </div>
         <% end %>
 
         <div class="actions">
-          <%= f.submit "Log in Account", class: 'btn btn-primary w-100' %>
+          <%= f.submit "Masuk Akun", class: 'btn btn-primary w-100' %>
         </div>
       <% end %>
 
