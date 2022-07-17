@@ -8,7 +8,7 @@
         <div class="nav navbar-nav ml-auto">
           <% if user_signed_in? %>   
           <a class="nav-item nav-link active" href="<%= projects_path %>" >Beranda</a>
-          <a class="nav-item nav-link" href="<%= edit_user_registration_path %>" >Edit User</a>
+          <a class="nav-item nav-link" href="<%= edit_user_registration_path %>" >Edit Akun</a>
           <a class="nav-item nav-link"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-secondary mb-auto mt-auto' %></a>
           <% else %>
           <a class="nav-item nav-link" href="<%= new_user_session_path %>" >Sign In</a>

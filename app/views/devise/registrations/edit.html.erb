@@ -2,7 +2,7 @@
 <div class="card">
   <div class="card-body">
     <h2 class='card-tittle mb-4'>
-      <span>Edit <%= resource_name.to_s.humanize %> </span>
+      <span>Edit Akun</span>
     </h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -43,9 +43,9 @@
 
       <hr>
 
-      <h3>Hapus akun Saya</h3>
+      <h3>Hapus Akun Saya</h3>
 
-      <p>Hapus akun jika tidak diperlukan lagi <%= button_to "Hapus Akun Saya", registration_path(resource_name), data: { confirm: "Apakah anda yakin?" }, method: :delete, class: 'btn btn-danger' %></p>
+      <p>Hapus akun jika tidak diperlukan lagi <%= button_to "Hapus Akun", registration_path(resource_name), data: { confirm: "Apakah anda yakin?" }, method: :delete, class: 'btn btn-danger' %></p>
 
     </div>
 </div>
